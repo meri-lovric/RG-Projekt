@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3656821174936895441}
   - component: {fileID: 6940431529972372787}
   m_Layer: 0
-  m_Name: Starboard Booster
+  m_Name: Starboard Booster Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 4565466902367824128}
   - component: {fileID: 928135483085508470}
   m_Layer: 0
-  m_Name: Starboard Booster (1)
+  m_Name: Starboard Booster Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
