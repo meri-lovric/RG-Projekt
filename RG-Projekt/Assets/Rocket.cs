@@ -6,6 +6,10 @@ public class Rocket : MonoBehaviour
 {
     Rigidbody rigidBody;
     AudioSource thrustSound;
+    [SerializeField] float rcsThrust = 100f;
+    [SerializeField] float mainThrust = 100f;
+
+
     bool thrusting = false;
     // Start is called before the first frame update
     void Start()
@@ -23,14 +27,15 @@ public class Rocket : MonoBehaviour
     }
     private void Rotate()
     {
+        float rotationThisFrame = rcsThrust * Time.deltaTime;
         rigidBody.freezeRotation = true; // take manual control of rotation
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(Vector3.forward);
+            transform.Rotate(Vector3.forward * rotationThisFrame);
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(-Vector3.forward);
+            transform.Rotate(-Vector3.forward * rotationThisFrame);
         }
         rigidBody.freezeRotation = false; // resume Physx control of rotation
 
@@ -41,7 +46,7 @@ public class Rocket : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
         { //can thrust while rotating
             thrusting = true;
-            rigidBody.AddRelativeForce(Vector3.up);
+            rigidBody.AddRelativeForce(Vector3.up * mainThrust);
 
             if (thrusting && !thrustSound.isPlaying) // so the audio doesn't layer
             {
@@ -54,4 +59,20 @@ public class Rocket : MonoBehaviour
             thrustSound.Stop();
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+                print("OK"); // todo remove
+                break;
+            default:
+                print("Dead");
+                //kill the player
+                break;
+        }
+    }
 }
+
+
