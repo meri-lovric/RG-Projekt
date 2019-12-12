@@ -11,12 +11,16 @@ public class Rocket : MonoBehaviour
     [SerializeField] AudioClip success;
     [SerializeField] AudioClip death;
 
+    [SerializeField] float levelLoadDelay = 2f;
+
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] ParticleSystem deathParticles;
 
     enum State { Alive, Dying, Transcending }
     State state = State.Alive;
+    bool collisionsDisabled = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +37,16 @@ public class Rocket : MonoBehaviour
             RespondToRotateInput();
             RespondToThrustInput();
         }
+        if (Debug.isDebugBuild) { RespondToDebugKeys(); }
+
     }
+
+    private void RespondToDebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L)) { LoadNextLevel(); }
+        else if (Input.GetKeyDown(KeyCode.C)) { collisionsDisabled = !collisionsDisabled; }
+    }
+
     private void RespondToRotateInput()
     {
         float rotationThisFrame = rcsThrust * Time.deltaTime;
@@ -66,7 +79,7 @@ public class Rocket : MonoBehaviour
 
     private void ApplyThrust()
     {
-        rigidBody.AddRelativeForce(Vector3.up * mainThrust /** Time.deltaTime*/);
+        rigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
 
         if (!audioSource.isPlaying) // so the audio doesn't layer
         {
@@ -77,7 +90,7 @@ public class Rocket : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (state != State.Alive) { return; } // ignore collisions when dead
+        if (state != State.Alive || collisionsDisabled) { return; }
         switch (collision.gameObject.tag)
         {
             case "Friendly":
@@ -99,7 +112,7 @@ public class Rocket : MonoBehaviour
         audioSource.PlayOneShot(success);
         successParticles.Play();
 
-        Invoke("LoadNextLevel", 1f);
+        Invoke("LoadNextLevel", levelLoadDelay);
     }
     private void StartDeathSequence()
     {
@@ -108,7 +121,7 @@ public class Rocket : MonoBehaviour
         audioSource.PlayOneShot(death);
         deathParticles.Play();
 
-        Invoke("LoadFirstLevel", 1f);
+        Invoke("LoadFirstLevel", levelLoadDelay);
     }
 
 
@@ -120,7 +133,10 @@ public class Rocket : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = ++currentSceneIndex;
+        if(nextSceneIndex == SceneManager.sceneCountInBuildSettings) {nextSceneIndex = 0;}
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }
 
