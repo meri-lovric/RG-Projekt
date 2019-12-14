@@ -1813,7 +1813,7 @@ PrefabInstance:
     - target: {fileID: 7417010455918236925, guid: a4ae52d14395b5048b30d4e7eafab160,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.3
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 7417010455918236925, guid: a4ae52d14395b5048b30d4e7eafab160,
         type: 3}
@@ -1938,7 +1938,7 @@ PrefabInstance:
     - target: {fileID: 7762125349310629226, guid: dd276efc4f8fc3b4ba22d74de6d77379,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.85
+      value: 14.4
       objectReference: {fileID: 0}
     - target: {fileID: 7762125349310629226, guid: dd276efc4f8fc3b4ba22d74de6d77379,
         type: 3}
@@ -2175,6 +2175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementVector: {x: 20, y: 0, z: 0}
+  angleX: 0
+  angleY: 0
+  angleZ: 0
   period: 2
 --- !u!4 &1793589477 stripped
 Transform:
