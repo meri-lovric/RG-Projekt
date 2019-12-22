@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &214051639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 214051640}
+  - component: {fileID: 214051641}
+  m_Layer: 0
+  m_Name: Spot Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &214051640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214051639}
+  m_LocalRotation: {x: -0.53433275, y: 0.49296007, z: 0.46312907, w: 0.50694215}
+  m_LocalPosition: {x: -0.65, y: -0.74, z: 4.1}
+  m_LocalScale: {x: 0.28404704, y: 0.284047, z: 0.284047}
+  m_Children: []
+  m_Father: {fileID: 985391392304454443}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -93.282, y: -90, z: 89.99999}
+--- !u!108 &214051641
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214051639}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 0
+  m_Color: {r: 0.9056604, g: 0.8838146, b: 0.252047, a: 1}
+  m_Intensity: 24.37
+  m_Range: 39.7
+  m_SpotAngle: 50.3
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &985391392304875273
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +80,7 @@ GameObject:
   - component: {fileID: 985391392304454441}
   - component: {fileID: 985391392307845899}
   - component: {fileID: 985391392306878923}
+  - component: {fileID: 5922089403585554205}
   m_Layer: 0
   m_Name: Icosphere
   m_TagString: Untagged
@@ -25,13 +95,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985391392304875273}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.391533, y: 4.459116, z: 4.68546}
+  m_LocalRotation: {x: -0.7394235, y: -0.06638563, z: -0.06902194, w: 0.6663947}
+  m_LocalPosition: {x: -1.388147, y: 4.4572186, z: 4.6890244}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 985391392304454443}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -95.923996, y: -7.5689697, z: -3.4339905}
 --- !u!33 &985391392307845899
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -57,7 +127,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 04fd1f48e81a62a478c38287d921c8ce, type: 3}
+  - {fileID: 2100000, guid: 3f2fe38749fc9324f896a48044cf1af5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,6 +147,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5922089403585554205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985391392304875273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1017969, y: 1.9277333, z: 2.1601727}
+  m_Center: {x: -0.0035273433, y: -0.019815987, z: 0.023868093}
 --- !u!1 &985391392304875275
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,6 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985391392304454443}
+  - component: {fileID: 4878134495523804640}
   m_Layer: 0
   m_Name: cloud
   m_TagString: Untagged
@@ -100,16 +184,34 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985391392304875275}
-  m_LocalRotation: {x: -0, y: -0.6763345, z: -0, w: 0.7365946}
+  m_LocalRotation: {x: 0, y: -0.6763362, z: 0, w: 0.73659307}
   m_LocalPosition: {x: -114.50815, y: 68.92402, z: -254.6237}
-  m_LocalScale: {x: 4.9859, y: 4.9859, z: 4.9859}
+  m_LocalScale: {x: 7.0410876, y: 7.0410876, z: 7.0410876}
   m_Children:
   - {fileID: 985391392304454441}
   - {fileID: 985391392304454447}
   - {fileID: 985391392304454445}
+  - {fileID: 214051640}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -85.116005, z: 0}
+--- !u!114 &4878134495523804640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985391392304875275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be3c9ac85597aca4897945c9997d0c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 0, y: 10, z: 0}
+  angleX: 0
+  angleY: 0
+  angleZ: 0
+  period: 2
 --- !u!1 &985391392304875277
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +223,7 @@ GameObject:
   - component: {fileID: 985391392304454445}
   - component: {fileID: 985391392307845903}
   - component: {fileID: 985391392306878927}
+  - component: {fileID: 4218987987547564539}
   m_Layer: 0
   m_Name: Icosphere.002
   m_TagString: Untagged
@@ -135,13 +238,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985391392304875277}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.464848, y: 4.558901, z: 6.026684}
+  m_LocalRotation: {x: -0.67014253, y: -0.10493624, z: 0.09726781, w: 0.7283106}
+  m_LocalPosition: {x: -1.45, y: 4.5616117, z: 5.91}
   m_LocalScale: {x: 0.7353652, y: 0.7353652, z: 0.7353652}
   m_Children: []
   m_Father: {fileID: 985391392304454443}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -72.888, y: -74.26501, z: 73.637}
 --- !u!33 &985391392307845903
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -167,7 +270,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 04fd1f48e81a62a478c38287d921c8ce, type: 3}
+  - {fileID: 2100000, guid: 3f2fe38749fc9324f896a48044cf1af5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -187,6 +290,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4218987987547564539
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985391392304875277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1017966, y: 1.9277326, z: 2.1601717}
+  m_Center: {x: -0.0035273435, y: -0.019817885, z: 0.02386808}
 --- !u!1 &985391392304875279
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +314,7 @@ GameObject:
   - component: {fileID: 985391392304454447}
   - component: {fileID: 985391392307845897}
   - component: {fileID: 985391392306878921}
+  - component: {fileID: 5430321560066790830}
   m_Layer: 0
   m_Name: Icosphere.001
   m_TagString: Untagged
@@ -244,7 +361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 04fd1f48e81a62a478c38287d921c8ce, type: 3}
+  - {fileID: 2100000, guid: 3f2fe38749fc9324f896a48044cf1af5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -264,3 +381,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5430321560066790830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985391392304875279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1017969, y: 1.9277331, z: 2.1601722}
+  m_Center: {x: -0.0035274622, y: -0.019818606, z: 0.023869041}
