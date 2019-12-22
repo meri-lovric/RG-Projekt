@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Rocket : MonoBehaviour
+public class Player : MonoBehaviour
 {
     Rigidbody rigidBody;
     AudioSource audioSource;
@@ -128,15 +128,20 @@ public class Rocket : MonoBehaviour
 
     private void LoadFirstLevel()
     {
-        SceneManager.LoadScene(0);
+        var name = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(name.Substring(0, name.Length - 1) + "1");
     }
 
     private void LoadNextLevel()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        var name = SceneManager.GetActiveScene().name;
+        //Debug.Log(name.Substring(0, name.Length-1));
+        Debug.Log(name.Substring(name.Length - 1, 1));
+        SceneManager.LoadScene(name.Substring(0, name.Length - 1) + (int.Parse(name.Substring(name.Length - 1, 1)) + 1));
+        /*int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = ++currentSceneIndex;
-        if(nextSceneIndex == SceneManager.sceneCountInBuildSettings) {nextSceneIndex = 0;}
-        SceneManager.LoadScene(nextSceneIndex);
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings) { nextSceneIndex = 0; }
+        SceneManager.LoadScene(nextSceneIndex);*/
     }
 }
 
