@@ -29,4 +29,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(level);
     }
+    public void QuitLevel(string level)
+    {
+        Debug.Log("QUIT!");
+        SceneManager.LoadScene(level);
+    }
 }

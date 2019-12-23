@@ -137,7 +137,15 @@ public class Player : MonoBehaviour
         var name = SceneManager.GetActiveScene().name;
         //Debug.Log(name.Substring(0, name.Length-1));
         Debug.Log(name.Substring(name.Length - 1, 1));
-        SceneManager.LoadScene(name.Substring(0, name.Length - 1) + (int.Parse(name.Substring(name.Length - 1, 1)) + 1));
+        if (int.Parse(name.Substring(name.Length - 1, 1)) >= 5)
+        {
+
+            SceneManager.LoadScene("WinScene");
+        }
+        else
+        {
+            SceneManager.LoadScene(name.Substring(0, name.Length - 1) + (int.Parse(name.Substring(name.Length - 1, 1)) + 1));
+        }
         /*int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = ++currentSceneIndex;
         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings) { nextSceneIndex = 0; }
