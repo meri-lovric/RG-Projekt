@@ -6648,5 +6648,6 @@ PrefabInstance:
       propertyPath: field of view
       value: 57.3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8004792136255174670, guid: 8745317e619ff234c934e00cac65777b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8745317e619ff234c934e00cac65777b, type: 3}
