@@ -36,14 +36,14 @@ EditorBuildSettings:
     path: Assets/Levels/Sea/Sea4.unity
     guid: f9ff2660d1078b743973bc2952a7fe21
   - enabled: 1
+    path: Assets/Levels/Sea/Sea5.unity
+    guid: 5a09b3005f06bf540af4e0170e5ca89a
+  - enabled: 1
     path: Assets/Levels/Space/Space1.unity
     guid: 2708bcdf316bef44f924a77576aa0fbc
   - enabled: 1
     path: Assets/Levels/Space/Space2.unity
     guid: acd36ec46f489754881c35b5955084ce
-  - enabled: 1
-    path: Assets/Scenes/WinScene.unity
-    guid: 5083d3b28b685ed48beb65207e63a2c6
   - enabled: 1
     path: Assets/Levels/Space/Space3.unity
     guid: 1b4ced00af4718d4db82c7e377709a17
@@ -54,6 +54,6 @@ EditorBuildSettings:
     path: Assets/Levels/Space/Space5.unity
     guid: 5786be4cb61d983438dd107eea47de01
   - enabled: 1
-    path: Assets/Levels/Sea/Sea5.unity
-    guid: 5a09b3005f06bf540af4e0170e5ca89a
+    path: Assets/Scenes/WinScene.unity
+    guid: 5083d3b28b685ed48beb65207e63a2c6
   m_configObjects: {}
