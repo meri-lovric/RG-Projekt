@@ -25,6 +25,11 @@ public class MainMenu : MonoBehaviour
  
         SceneManager.LoadScene(level);
     }
+    public void PlayPlanet(string level)
+    {
+ 
+        SceneManager.LoadScene(level);
+    }
     public void PlaySea(string level)
     {
         SceneManager.LoadScene(level);
